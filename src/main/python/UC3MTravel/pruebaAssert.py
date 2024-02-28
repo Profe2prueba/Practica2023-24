@@ -1,3 +1,6 @@
+import datetime
+
+
 class misTests:
     def ejemplo(self):
         print ("running ejemplo")
@@ -7,6 +10,8 @@ class misTests:
         return a + b
 
 
+obj=datetime.datetime.now()
+print(obj)
 obj=misTests()
 obj.ejemplo()
 

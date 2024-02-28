@@ -1,6 +1,7 @@
 import datetime
 import json
 import hashlib
+from freezegun import freeze_time
 from .HotelManagementException import HotelManagementException
 from .HotelReservation import HotelReservation
 
@@ -36,13 +37,14 @@ class HotelManager:
         # Close the file
         return req
 
+    @freeze_time("2014-02-16")
     def room_reservation (self,credit_card, name_surname, id_Card, phone_number,
                           room_type, arrival_date, num_days):
         json_info = {"id_card": id_Card,
                      "name_surname": name_surname,
                      "credit_card": credit_card,
                      "phone_number:": phone_number,
-                     "reservation_date": datetime.date,
+                     "reservation_date": datetime.datetime.now(),
                      "arrival_date": arrival_date,
                      "num_days": num_days,
                      "room_type": room_type,
